@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Queue;
  
 public class Main_10866 {
 	public static void main(String[] args) throws IOException {
@@ -88,4 +90,43 @@ public class Main_10866 {
 		}
 		System.out.println(sb);
 	}
+	
+	class Solution1 {
+	    public int solution(int n, int v, int[] A, int[] B, int[] C) {
+	        int answer = 0;
+	        // int[][][] dp = new int[n][n][n];
+	        // int max = -1;
+	        // for(int i=0; i<n; i++){
+	        //     for(int j=0; j<n; j++){
+	        //         for(int k=0; k<n; k++){
+	        //             int mul = A[i]*B[j]*C[k];
+	        //             if(mul<v&&mul>max) max = mul;
+	        //         }
+	        //     }
+	        // }
+	        // return max;
+	        
+	        int[] dp = new int[2*n];
+	        int max = -1;
+	        if(A[0]*B[0]*C[0]>v) return -1;
+	        int idx=0;
+
+	        for(int i=0; i<n; i++){
+	            for(int j=0; j<n; j++){
+	                dp[idx++] = A[i]*B[j];
+	            }
+	        }
+	        Arrays.sort(dp);
+	        int cIdx=n-1;
+	        
+	        for(int i=2*n-1; i>=0; i--){
+	            for(int j=n-1; j>=0; j--){
+	                if(dp[i]*C[j]>v) return dp[i]*C[j];
+	            }
+	        }
+	        return -1;
+	    }
+	}
+	
+	
 }
