@@ -44,9 +44,6 @@ public class Main_17144 {
 				result += map[i][j];
 			}
 		}
-		for(int i=0; i<R; i++) {
-			System.out.println(Arrays.toString(map[i]));
-		}
 		System.out.println(result);
 	}
 	
