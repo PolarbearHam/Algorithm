@@ -36,8 +36,8 @@ public class Main_20125 {
 		}
 		int copyR = heart[0];
 		int copyC = heart[1]-1;
-		int answerR = heart[0];
-		int answerC = heart[1];
+		int answerR = heart[0]+1;
+		int answerC = heart[1]+1;
 		while(true) {
 			if(copyC<0||map[copyR][copyC]=='_') break;
 			if(map[copyR][copyC]=='*') {
