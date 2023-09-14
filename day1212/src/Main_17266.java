@@ -9,23 +9,37 @@ public class Main_17266 {
 		int N = Integer.parseInt(br.readLine());
 		int M = Integer.parseInt(br.readLine());
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		int[] position = new int[M+2];
+		int result = 0;
+		int[] position = new int[M];
+		
 		for(int i=0; i<M; i++) {
 			position[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		int maxDis = position[0];
-		
-		for(int i=1; i<M; i++) {
-			if(((position[i]-position[i-1])&1)==0) {
-				maxDis = Math.max(maxDis, (position[i] - position[i-1])/2);
+		int low = 1;
+		int high = N;
+		while(low<=high) {
+			int mid = (low+high)/2;
+			boolean flag = true;
+			
+			int point = 0;
+			for(int i=0; i<position.length; i++) {
+				if(position[i]-mid <= point) {
+					point = position[i] + mid;
+				}else {
+					flag = false;
+				}
+			}
+			if(N-point>0) flag = false;
+			else flag = true;
+			
+			if(flag) {
+				result = mid;
+				high = mid-1;
 			}else {
-				maxDis = Math.max(maxDis, (position[i] - position[i-1]/2 + 1));
+				low = mid+1;
 			}
 		}
-		maxDis = Math.max(maxDis, N-position[M-1]);
-		
-		System.out.println(maxDis);
-		
+		System.out.println(result);
 	}
 }
