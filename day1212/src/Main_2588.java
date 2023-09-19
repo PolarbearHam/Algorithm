@@ -16,5 +16,6 @@ public class Main_2588 {
 		System.out.println(A*b1);
 		System.out.println(A*B);
 		
+		
 	}
 }
