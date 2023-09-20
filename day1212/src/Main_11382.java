@@ -5,6 +5,7 @@ public class Main_11382 {
 	public static void main(String[] args) throws Exception{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		String[] s = br.readLine().split(" ");
-		System.out.println(Integer.parseInt(s[0])+Integer.parseInt(s[1])+Integer.parseInt(s[2]));
+		
+		System.out.println(Long.parseLong(s[0])+Long.parseLong(s[1])+Long.parseLong(s[2]));
 	}
 }
