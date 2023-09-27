@@ -31,6 +31,10 @@ public class Main_21921 {
 				count = 1;
 			}
 		}
+        if(max==0){
+            System.out.println("SAD");
+            return ;
+        }
 		
 		System.out.println(max);
 		System.out.println(count);
