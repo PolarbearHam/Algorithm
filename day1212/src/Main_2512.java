@@ -7,14 +7,17 @@ public class Main_2512 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int N = Integer.parseInt(br.readLine());
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		int left=0, right=-1;
+		
 		int[] arr = new int[N];
-		int left = 0, right = -1;
+		StringTokenizer st = new StringTokenizer(br.readLine());
 		for(int i=0; i<N; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
 			right = Math.max(right, arr[i]);
 		}
+		
 		int M = Integer.parseInt(br.readLine());
+		
 		while(left<=right) {
 			int mid = (left+right)/2;
 			long budget = 0;
@@ -29,5 +32,9 @@ public class Main_2512 {
 			}
 		}
 		System.out.println(right);
+		
+		
+		
 	}
+	
 }
