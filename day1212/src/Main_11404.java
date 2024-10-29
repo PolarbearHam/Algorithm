@@ -14,8 +14,8 @@ public class Main_11404 {
 		int[][] arr = new int[n+1][n+1];
 		for(int i=0; i<n+1; i++) {
 			for(int j=0; j<n+1; j++) {
+				if(i==j) continue;
 				arr[i][j] = INF;
-				if(i==j) arr[i][j]=0;
 			}
 		}
 		StringTokenizer st;
@@ -42,7 +42,8 @@ public class Main_11404 {
 		
 		for(int i=1; i<n+1; i++) {
 			for(int j=1; j<n+1; j++) {
-				sb.append(arr[i][j]+" ");
+				if(arr[i][j]==INF) sb.append("0 ");
+				else sb.append(arr[i][j]+" ");
 			}
 			sb.append("\n");
 		}
