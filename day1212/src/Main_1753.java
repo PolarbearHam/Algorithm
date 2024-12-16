@@ -73,16 +73,16 @@ public class Main_1753 {
 		}
 	}
 	
-}
-class Node implements Comparable<Node>{
-	int v;
-	int w;
-	Node(int v, int w) {
-		this.v = v;
-		this.w = w;
-	}
-	@Override
-	public int compareTo(Node O) {
-		return w - O.w;
+	static class Node implements Comparable<Node>{
+		int v;
+		int w;
+		Node(int v, int w) {
+			this.v = v;
+			this.w = w;
+		}
+		@Override
+		public int compareTo(Node O) {
+			return w - O.w;
+		}
 	}
 }
